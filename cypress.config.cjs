@@ -13,4 +13,13 @@ module.exports = defineConfig({
       // and load any plugins that require the Node environment
     },
   },
+
+  component: {
+    viewportWidth: 300,
+    viewportHeight: 200,
+    devServer: {
+      framework: 'react',
+      bundler: 'vite',
+    },
+  },
 })
