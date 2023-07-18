@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <PatternFormat
-        format="+1 (###) #### ###"
+        format="+1 (###) ### ####"
         allowEmptyFormatting
         mask="_"
         data-cy="phone"
