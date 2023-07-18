@@ -1,5 +1,6 @@
 {
   "name": "react-number-format-example",
+  "description": "Testing React Number Format Component Example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
