@@ -1,8 +1,10 @@
 import { NumericFormat } from 'react-number-format'
 import '../../src/App.css'
+// https://github.com/bahmutov/cypress-map
+import 'cypress-map'
 
 describe('onValueChange.cy.jsx', () => {
-  it('playground', () => {
+  it('calls onValueChange', () => {
     cy.mount(
       <NumericFormat
         value={1234}
@@ -27,38 +29,30 @@ describe('onValueChange.cy.jsx', () => {
     // check each call
     cy.get('@onValueChange').should('have.property', 'callCount', 5)
     cy.get('@onValueChange')
-      .its('firstCall.args.0')
-      .should('deep.equal', { formattedValue: '$5', value: '5', floatValue: 5 })
-    cy.get('@onValueChange').its('secondCall.args.0').should('deep.equal', {
-      formattedValue: '$50',
-      value: '50',
-      floatValue: 50,
-    })
-    cy.get('@onValueChange').its('thirdCall.args.0').should('deep.equal', {
-      formattedValue: '$50.',
-      value: '50.',
-      floatValue: 50,
-    })
-    cy.get('@onValueChange').its('thirdCall.args.0').should('deep.equal', {
-      formattedValue: '$50.',
-      value: '50.',
-      floatValue: 50,
-    })
-    cy.get('@onValueChange')
-      .invoke('getCall', 3)
-      .its('args.0')
-      .should('deep.equal', {
-        formattedValue: '$50.9',
-        value: '50.9',
-        floatValue: 50.9,
-      })
-    cy.get('@onValueChange')
-      .invoke('getCall', 4)
-      .its('args.0')
-      .should('deep.equal', {
-        formattedValue: '$50.99',
-        value: '50.99',
-        floatValue: 50.99,
-      })
+      .invoke('getCalls')
+      .map('args.0')
+      .should('deep.equal', [
+        { formattedValue: '$5', value: '5', floatValue: 5 },
+        {
+          formattedValue: '$50',
+          value: '50',
+          floatValue: 50,
+        },
+        {
+          formattedValue: '$50.',
+          value: '50.',
+          floatValue: 50,
+        },
+        {
+          formattedValue: '$50.9',
+          value: '50.9',
+          floatValue: 50.9,
+        },
+        {
+          formattedValue: '$50.99',
+          value: '50.99',
+          floatValue: 50.99,
+        },
+      ])
   })
 })
