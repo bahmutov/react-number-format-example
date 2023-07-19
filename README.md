@@ -6,6 +6,8 @@ Testing [react-number-format](https://github.com/s-yadav/react-number-format#rea
 
 📝 Read the blog post [Testing React Number Format Component Example](https://glebbahmutov.com/blog/test-react-number-format/)
 
+![End-to-end test](./images/e2e.png)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2023
