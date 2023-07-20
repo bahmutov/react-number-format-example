@@ -19,7 +19,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@vitejs/plugin-react": "^4.0.1",
-    "cy-spok": "^1.6.1",
+    "cy-spok": "^1.6.2",
     "cypress": "^12.17.1",
     "cypress-map": "^1.21.0",
     "cypress-real-events": "^1.9.1",
